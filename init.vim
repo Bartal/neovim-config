@@ -174,9 +174,6 @@ let g:AutoPairsMultilineClose=0
 " Don't insert extra spaces
 let g:AutoPairsMapSpace=0
 
-" Use arrow keys to switch tabs
-nnoremap <Left> :tabprevious<CR>
-nnoremap <Right> :tabnext<CR>
 
 " Column limits
 set textwidth=110
