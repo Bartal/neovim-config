@@ -18,3 +18,14 @@ let g:neoformat_tex_custom = {
 
 
 let g:neoformat_enabled_tex = ['custom']
+
+
+if executable('texlab')
+    au User lsp_setup call lsp#register_server({
+     \ 'name': 'texlab',
+     \ 'cmd': {server_info->['texlab']},
+     \ 'whitelist': ['tex'],
+     \ })
+endif
+
+
