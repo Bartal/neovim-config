@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/bartal/Programming_Workspaces/IraqBodyCount-projects/scraper/external/mitm-adblock/easylists'
+let g:netrw_dirhist_2='/home/bartal/.local/share/gnome-shell/extensions/Activity_Watch_Gnome_____Client@localhost.localdomain'

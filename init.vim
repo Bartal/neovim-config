@@ -1,14 +1,13 @@
-let g:python3_host_prog = '/Users/Bruger/AppData/Local/Programs/Python/Python37-32/python'
-let g:python_host_prog = '/python27/python.exe'
+"let g:python3_host_prog = '/Users/Bruger/AppData/Local/Programs/Python/Python37-32/python'
+"let g:python_host_prog = '/python27/python.exe'
 let g:grammarous#use_vim_spelllang = 1
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " below are some vim plugin for demonstration purpose
 Plug 'joshdick/onedark.vim'
 Plug 'iCyMind/NeoSolarized'
-"
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
-endif
+
+"Formatter for diffrent codes
+Plug 'sbdchd/neoformat'
 
 Plug 'sirver/ultisnips'
 
@@ -40,6 +39,7 @@ Plug 'uarun/vim-protobuf'
 Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
 Plug 'LnL7/vim-nix'
+Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}
 
 " Nice status bar
 Plug 'bling/vim-airline'
@@ -167,8 +167,6 @@ nnoremap <C-c> :wa<cr>
 " Toggle NerdTree
 nnoremap <leader>a :NERDTreeToggle<cr>
 
-" I type Wq more often than wq
-cmap Wq wq
 
 " [scrooloose/nerdcommenter]
 " Don't be too smart across lines
@@ -261,10 +259,3 @@ autocmd BufRead,BufNewFile   *.gyb set ft=swift
 let g:NERDCustomDelimiters = { 'swift': { 'left': '// ' }, 'c': { 'left': '// '} }
 let g:NERDDefaultAlign = 'left'
 
-if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-        \ })
-endif
